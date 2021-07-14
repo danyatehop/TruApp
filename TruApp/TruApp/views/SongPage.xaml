@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruApp.views.SongPage" 
+             Title="Текст песни"
+             BackgroundColor="#005FA3">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10">
+                <Label FontSize="15" FontFamily="Play-Bold" TextColor="#F6F0E1" Text="{Binding title}"/>
+                <Label FontFamily="Play-Regular" TextColor="#F6F0E1" Text="{Binding word}"></Label>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

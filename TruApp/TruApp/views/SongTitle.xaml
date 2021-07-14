@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruApp.views.SongTitle"
+>
+    <StackLayout BackgroundColor="#005FA3">
+        <StackLayout Orientation="Horizontal"
+                     BackgroundColor="#005FA3"
+                     HeightRequest="60">
+            <Label Text="Список песен"
+                   VerticalOptions="CenterAndExpand"
+                   FontFamily="Play-Bold"
+                   TextColor="#F6F0E1"
+                   FontSize="30"
+                   Margin="10,0,0,0"
+                   />
+            <Image Source="truicon.png"
+                   HorizontalOptions="EndAndExpand"
+                   HeightRequest="40"
+                   Margin="0,0,10,0" />
+        </StackLayout>
+        <SearchBar x:Name="MainSearchBar"
+                   TextColor="#F6F0E1"
+                   TextChanged="SearchBar_Changed"
+                   Placeholder="Найти"
+                   BackgroundColor="#005FA3">
+        </SearchBar>
+            <ListView x:Name="SongList"
+                      ItemsSource="{Binding}"
+                      ItemSelected="OnItemSelected"
+                      RowHeight="55">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal"
+                                             Margin="10">
+                                    <Label Text="{Binding title}"
+                                           VerticalOptions="Center"
+                                           TextColor="#F6F0E1"
+                                           FontFamily="Play-Bold">
+                                    </Label>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+    </StackLayout>
+</ContentPage>
